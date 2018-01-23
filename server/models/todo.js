@@ -1,7 +1,12 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
   var TODO = sequelize.define('TODO', {
-    id: DataTypes.STRING,
+    id:  {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: DataTypes.INTEGER,
+      },
     description: DataTypes.STRING
   }, {
     classMethods: {
